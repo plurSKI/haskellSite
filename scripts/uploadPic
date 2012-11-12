@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [ "$#" -lt 3 ]
+then
+  echo "Usage: $0 [normal/post] site image_location"
+  exit 1
+fi
+
+SITE=$2
+IMG=$3
+IMGP=`uuid | tr -d "-"`.jpg
+
+
+echo $1 | grep "post" &> /dev/null
+if [ "$?" -eq 0 ]
+then
+  convert -scale 190x190 $IMG $IMGP
+  mv $IMGP ~/haskellSite/static/$SITE/thumbs/
+  DISP="/$SITE/thumbs/$IMGP"
+else 
+  convert -scale 800x800 $IMG fs_$IMGP
+  convert -scale 300x300 $IMG th_$IMGP
+  mv fs_$IMGP ~/haskellSite/static/$SITE/pics/
+  mv th_$IMGP ~/haskellSite/static/$SITE/pics/
+  echo "Please enter a description: "
+  DESC=`head -n 1`
+  DISP="<center><a rel=\"imagePop\" title=\"$DESC\" href=\"/$SITE/pics/fs_$IMGP\"><img width=35% alt=\"$DESC\" src=\"/$SITE/pics/th_$IMGP\" /></a></center>"
+fi
+clear
+echo $DISP | xsel
+echo $DISP
+while [ true ]
+do
+  sleep 60
+done 

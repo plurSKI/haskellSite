@@ -1,0 +1,1 @@
+../common/page-head.tpl

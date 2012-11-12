@@ -1,0 +1,3 @@
+
+xmessage -buttons "Normal Image:1,Post Thumbnail:2,Exit:3" Choose a picture type
+xterm -C "ls && sleep 5" # uploadPic n devrand $1"

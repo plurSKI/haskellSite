@@ -1,0 +1,7 @@
+#!/bin/bash
+
+SRC_AREA=~/haskellSite/src/
+SALT=`head -c 32 /dev/urandom | md5sum | head -c 32`
+cat $SRC_AREA/Common.hs | sed -e "s/RANDOM_SALT/$SALT/" > $SRC_AREA/Common.hs.tmp
+mv $SRC_AREA/Common.hs.tmp $SRC_AREA/Common.hs
+echo Finished Salting

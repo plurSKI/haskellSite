@@ -1,0 +1,4 @@
+#!/bin/bash
+
+killall haskellSite
+authbind ~/.cabal/bin/haskellSite 80 &> ~/log

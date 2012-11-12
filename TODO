@@ -1,0 +1,12 @@
+* OnChange of visible in admin-post disable and clear Tag list and image
+* Fix " bug for tag-list
+* Delete/Modify a post
+* Change $$TITLE$$ for different sites
+* Admin comments
+* Ban IPs
+
+* Fix stupid-ass port 80 bug!
+* Fix lampSite value
+* Fix post-update hooks for siteData
+* Image zoomer too big
+* Cry

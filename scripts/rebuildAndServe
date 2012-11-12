@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd ~/haskellSite
+./scripts/salt
+rm ./templates/devrand/admin*
+rm ./templates/common/admin*
+cabal install
+./scripts/daemon 

@@ -1,0 +1,4 @@
+while true
+do
+  cabal install && haskellSite 8000
+done

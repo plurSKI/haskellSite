@@ -1,0 +1,1 @@
+../common/list-content.tpl
